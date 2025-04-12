@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warehouse job Registration</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap icon link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap-select CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css" />
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body>
+    <div class="form-container">
+        <form id="registrationForm" novalidate>
+            <!-- Header -->
+          <!-- Header -->
+<h3>warehouse jobs registration form</h3>
+<div class="form-title">Secure Your Spot with Our Online Registration</div>
+
+
+            <!-- Reference Name -->
+            <div class="mb-3">
+                <label for="referenceName" class="form-label">Reference Person Name</label>
+                <input type="text" class="form-control" id="referenceName" required />
+            </div>
+
+            <!-- Legal Name -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="legalFirst" class="form-label">Legal First Name <span
+                            class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="legalFirst" required>
+                    <div class="invalid-feedback">First name is required.</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="legalMiddle" class="form-label">Legal Middle Name</label>
+                    <input type="text" class="form-control" id="legalMiddle">
+                    <div class="invalid-feedback">Middle name is required.</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="legalSurname" class="form-label">Legal Surname <span
+                            class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="legalSurname" required>
+                    <div class="invalid-feedback">Legal Surname is required.</div>
+                </div>
+            </div>
+
+            <!-- Login Email -->
+            <div class="mb-3">
+                <label for="loginEmail" class="form-label">Login Email Address <span
+                        class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="loginEmail" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="passwordKey" class="form-label-addrees">App Password Key <span
+                        class="text-danger">*</span></label>
+                <!-- Toggle link with down arrow -->
+                <p class="d-flex align-items-center gap-1">
+                    <strong>Note :</strong> How to generate App Password Key
+                    <a class="text-primary d-flex align-items-center" data-bs-toggle="collapse" href="#passwordHelp"
+                        role="button" aria-expanded="false" aria-controls="passwordHelp">
+                        <i class="bi bi-arrow-down-circle fs-6"></i>
+                    </a>
+                </p>
+
+                <!-- Hidden collapsible content -->
+                <div class="collapse" id="passwordHelp">
+                    <div class="card card-body">
+                        <h7><strong>For Gmail Users:</strong></h7>
+                        <ol>
+                            <li>Go to your Google account at <a href="https://myaccount.google.com/"
+                                    target="_blank">https://myaccount.google.com/</a></li>
+                            <li>Go to the <strong>Security</strong> section.</li>
+                            <li>Enable <strong>2-Step Verification</strong> if it's not already enabled.</li>
+                            <li>Visit <a href="https://myaccount.google.com/apppasswords"
+                                    target="_blank">https://myaccount.google.com/apppasswords</a> to create an App
+                                Password.</li>
+                            <li>Enter a name for your app (e.g., your name, anything..) and create it.</li>
+                            <li>A modal will appear with the generated password. <strong>Copy the password</strong> and
+                                enter it in the
+                                box below.</li>
+                        </ol>
+
+                        <h7><strong>For Yahoo Users:</strong></h7>
+                        <ol>
+                            <li>Go to <a href="https://login.yahoo.com/account/security" target="_blank">Yahoo Account
+                                    Security</a>.
+                            </li>
+                            <li>Enable <strong>Two-Step Verification</strong> (if not already enabled):
+                                <ul>
+                                    <li>Scroll to "Two-step verification" and turn it ON.</li>
+                                    <li>Add your phone number to receive verification codes.</li>
+                                </ul>
+                            </li>
+                            <li>Generate an App Password:
+                                <ul>
+                                    <li>Scroll to "App passwords".</li>
+                                    <li>Click <strong>"Generate app password"</strong>.</li>
+                                    <li>Select the app you need (or choose <strong>Other App</strong> for custom use).
+                                    </li>
+                                    <li>Click <strong>"Generate"</strong> to get a 16-character app password.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Password input -->
+                <input type="text" class="form-control" id="passwordKey" maxlength="19" required />
+                <div class="invalid-feedback">App password must be 16 letters. It should contain only letters, grouped
+                    in 4-character blocks separated by spaces.</div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="loginPin" class="form-label">Login PIN <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="loginPin" maxlength="6" inputmode="numeric" required>
+                <div class="invalid-feedback">
+                    Login PIN must be exactly 6 digits.
+                </div>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="mb-3">
+                <label for="mobileNumber" class="form-label">Mobile Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="mobileNumber" maxlength="10" inputmode="numeric" required>
+                <div class="invalid-feedback">
+                    Mobile number must be exactly 10 digits.
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="dob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="dob" required />
+                    <div class="invalid-feedback">Date of birth is required.</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="arrivalDate" class="form-label">Arrival Date in Canada <span
+                            class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="arrivalDate" required />
+                    <div class="invalid-feedback">Arrival date is required.</div>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="mb-3">
+                <label for="address" class="form-label-addrees">Current Home Address <span
+                        class="text-danger">*</span></label>
+                <!-- <P><b>Note : </b>Example current home address</P> -->
+                <P><b>Format : </b>943 Venture Place, Kinuso, Alberta, T0G 1K0</P>
+                <input type="text" class="form-control" id="address" required />
+                <div class="invalid-feedback">Home address is required.</div>
+            </div>
+
+            <!-- SIN Number -->
+            <div class="mb-3">
+                <label for="sinNumber" class="form-label">SIN Number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="sinNumber" maxlength="9" inputmode="numeric" required>
+                <div class="invalid-feedback">
+                    SIN number must be exactly 9 digits.
+                </div>
+            </div>
+
+            <!-- Eligible to work in -->
+            <div class="section-title">Eligible to work in: <span class="text-danger">*</span></div>
+            <div class="radio-group mb-3 mt-2" id="workEligibilityGroup">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="workEligibility" id="parttime" value="Part time" required>
+                    <label class="form-check-label" for="parttime">Part time</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="workEligibility" id="fulltime" value="Full time">
+                    <label class="form-check-label" for="fulltime">Full time</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="workEligibility" id="any" value="Any">
+                    <label class="form-check-label" for="any">Any</label>
+                </div>
+            </div>
+
+            <!-- Preferred Work Location  -->
+            <div class="mb-3" id="preferredLocationContainer">
+                <label for="preferredLocations" class="form-label">Preferred Work Location <span
+                        class="text-danger">*</span></label>
+                <select class="selectpicker form-control" id="preferredLocations" multiple data-live-search="true"
+                    title="Choose locations..."></select>
+                <div class="invalid-feedback" id="locationError">Please select at least one location.</div>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="mb-3">
+                <label for="additionalNotes" class="form-label">Additional Notes</label>
+                <textarea class="form-control" id="additionalNotes" rows="3"></textarea>
+            </div>
+
+            <!-- Status in Canada -->
+            <div class="section-title">Status in Canada: <span class="text-danger">*</span></div>
+            <div class="radio-group mb-3 mt-2" id="statusCanadaGroup">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="statusCanada" id="status1" value="Work permit or PR holder" required>
+                    <label class="form-check-label" for="status1">Work permit or PR holder</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="statusCanada" id="status2" value="Study permit">
+                    <label class="form-check-label" for="status2">Study permit</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="statusCanada" id="status3" value="Break letter holder">
+                    <label class="form-check-label" for="status3">Break letter holder</label>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit" class="btn btn-success" style="width: 140px;">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/js/bootstrap-select.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
